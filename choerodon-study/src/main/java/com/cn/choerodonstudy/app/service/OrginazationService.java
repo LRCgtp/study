@@ -1,13 +1,15 @@
 package com.cn.choerodonstudy.app.service;
 
 import com.cn.choerodonstudy.infra.dto.OrganizationDTO;
+import com.cn.choerodonstudy.infra.vo.OrginazationVo;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public interface OrginazationService {
-    OrganizationDTO createOne(OrganizationDTO organizationDTO);
+    OrginazationVo createOne(OrginazationVo organizationVo);
 
-    OrganizationDTO getOriginaztion(Long id);
+    OrginazationVo getOriginaztion(BigInteger id);
 
     List<OrganizationDTO> list();
 }

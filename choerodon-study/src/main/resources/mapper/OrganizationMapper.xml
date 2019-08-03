@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.choerodonstudy.infra.mapper.OrginazitionMapper">
+    <resultMap id="orginazationVo" type="com.cn.choerodonstudy.infra.vo.OrginazationVo" autoMapping="true">
+        <id column="ID" property="ID"/>
+        <result column="NAME" property="NAME" />
+        <result column="CODE" property="CODE" />
+        <result column="IS_ENABLED" property="IS_ENABLED"/>
+    </resultMap>
+    
+    <insert id="insertOrginaztation" parameterType="com.cn.choerodonstudy.infra.vo.OrginazationVo" useGeneratedKeys="true" keyProperty="ID">
+        insert into fd_organization(ID,NAME,CODE,IS_ENABLED) values
+        (#{ID},#{NAME},#{CODE},#{IS_ENABLED})
+    </insert>
+
+    <select id="selectOrgByID" resultMap="orginazationVo">
+        select * from fd_organization where ID=#{ID}
+    </select>
+
+</mapper>
